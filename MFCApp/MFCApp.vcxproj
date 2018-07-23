@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{56B9820F-3526-49B2-A6E2-85A5B802A397}</ProjectGuid>
+    <RootNamespace>MFCApp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;C:\Program Files %28x86%29\Delta Tau\PMAC Executive Pro Suite\PComm32 Pro\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;C:\Program Files %28x86%29\Delta Tau\PMAC Executive Pro Suite\PComm32 Pro\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;C:\Program Files %28x86%29\Delta Tau\PMAC Executive Pro Suite\PComm32 Pro\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;C:\Program Files %28x86%29\Delta Tau\PMAC Executive Pro Suite\PComm32 Pro\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(TargetDir);$(ProjectDir);$(ProjectDir)Theme\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>JmpMachineProLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(TargetDir);$(ProjectDir);$(ProjectDir)Theme\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>JmpMachineProLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(TargetDir);$(ProjectDir);$(ProjectDir)Theme\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>JmpMachineProLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(TargetDir);$(ProjectDir);$(ProjectDir)Theme\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>JmpMachineProLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DialogAuto.h" />
+    <ClInclude Include="DialogConfig.h" />
+    <ClInclude Include="DialogLog.h" />
+    <ClInclude Include="DialogMaint.h" />
+    <ClInclude Include="DialogManual.h" />
+    <ClInclude Include="DialogRecipe.h" />
+    <ClInclude Include="Include\Runtime.h" />
+    <ClInclude Include="MFCApp.h" />
+    <ClInclude Include="MFCAppDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Theme\BaseCombo.h" />
+    <ClInclude Include="Theme\BaseEdit.h" />
+    <ClInclude Include="Theme\BaseMenu.h" />
+    <ClInclude Include="Theme\DlgResizeWnd.h" />
+    <ClInclude Include="Theme\HeadCtrl.h" />
+    <ClInclude Include="Theme\ThemeButton.h" />
+    <ClInclude Include="Theme\ThemeCheck.h" />
+    <ClInclude Include="Theme\ThemeCombo.h" />
+    <ClInclude Include="Theme\ThemeDialog.h" />
+    <ClInclude Include="Theme\ThemeEdit.h" />
+    <ClInclude Include="Theme\ThemeGrid.h" />
+    <ClInclude Include="Theme\ThemeGroup.h" />
+    <ClInclude Include="Theme\ThemeListBox.h" />
+    <ClInclude Include="Theme\ThemeListCtrl.h" />
+    <ClInclude Include="Theme\ThemeMenu.h" />
+    <ClInclude Include="Theme\ThemePicture.h" />
+    <ClInclude Include="Theme\ThemeProgress.h" />
+    <ClInclude Include="Theme\ThemeRadio.h" />
+    <ClInclude Include="Theme\ThemeScroll.h" />
+    <ClInclude Include="Theme\ThemeSlider.h" />
+    <ClInclude Include="Theme\ThemeStatic.h" />
+    <ClInclude Include="Theme\ThemeToolTip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DialogAuto.cpp" />
+    <ClCompile Include="DialogConfig.cpp" />
+    <ClCompile Include="DialogLog.cpp" />
+    <ClCompile Include="DialogMaint.cpp" />
+    <ClCompile Include="DialogManual.cpp" />
+    <ClCompile Include="DialogRecipe.cpp" />
+    <ClCompile Include="Include\Runtime.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MFCApp.cpp" />
+    <ClCompile Include="MFCAppDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Theme\BaseCombo.cpp" />
+    <ClCompile Include="Theme\BaseEdit.cpp" />
+    <ClCompile Include="Theme\BaseMenu.cpp" />
+    <ClCompile Include="Theme\DlgResizeWnd.cpp" />
+    <ClCompile Include="Theme\HeadCtrl.cpp" />
+    <ClCompile Include="Theme\ThemeButton.cpp" />
+    <ClCompile Include="Theme\ThemeCheck.cpp" />
+    <ClCompile Include="Theme\ThemeCombo.cpp" />
+    <ClCompile Include="Theme\ThemeDialog.cpp" />
+    <ClCompile Include="Theme\ThemeEdit.cpp" />
+    <ClCompile Include="Theme\ThemeGrid.cpp" />
+    <ClCompile Include="Theme\ThemeGroup.cpp" />
+    <ClCompile Include="Theme\ThemeListBox.cpp" />
+    <ClCompile Include="Theme\ThemeListCtrl.cpp" />
+    <ClCompile Include="Theme\ThemeMenu.cpp" />
+    <ClCompile Include="Theme\ThemePicture.cpp" />
+    <ClCompile Include="Theme\ThemeProgress.cpp" />
+    <ClCompile Include="Theme\ThemeRadio.cpp" />
+    <ClCompile Include="Theme\ThemeScroll.cpp" />
+    <ClCompile Include="Theme\ThemeSlider.cpp" />
+    <ClCompile Include="Theme\ThemeStatic.cpp" />
+    <ClCompile Include="Theme\ThemeToolTip.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MFCApp.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MFCApp.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap2.bmp" />
+    <Image Include="res\IDB_BTN_COMBOBOX_DROP.bmp" />
+    <Image Include="res\IDB_BTN_COMBOBOX_DROP_ROUND.bmp" />
+    <Image Include="res\IDB_BTN_DLG_IN.bmp" />
+    <Image Include="res\IDB_BTN_DLG_OUT.bmp" />
+    <Image Include="res\IDB_BTN_EXIT.bmp" />
+    <Image Include="res\IDB_BTN_MENU.bmp" />
+    <Image Include="res\IDB_BTN_TAB.bmp" />
+    <Image Include="res\IDB_CHECK_MARK.bmp" />
+    <Image Include="res\IDB_GROUP_BACK.bmp" />
+    <Image Include="res\IDB_GROUP_SEPERATE_H.bmp" />
+    <Image Include="res\IDB_GROUP_SEPERATE_V.bmp" />
+    <Image Include="res\IDB_MENU_ITEM_BACK.bmp" />
+    <Image Include="res\IDB_MENU_SEPERATE.bmp" />
+    <Image Include="res\IDB_RADIO_MARK.bmp" />
+    <Image Include="res\IDB_SCROLL_BACK_H.bmp" />
+    <Image Include="res\IDB_SCROLL_BACK_V.bmp" />
+    <Image Include="res\IDB_SCROLL_BAR_H.bmp" />
+    <Image Include="res\IDB_SCROLL_BAR_V.bmp" />
+    <Image Include="res\IDB_SCROLL_DOWN.bmp" />
+    <Image Include="res\IDB_SCROLL_LEFT.bmp" />
+    <Image Include="res\IDB_SCROLL_RIGHT.bmp" />
+    <Image Include="res\IDB_SCROLL_UP.bmp" />
+    <Image Include="res\IDB_SLIDER_BACK_H.bmp" />
+    <Image Include="res\IDB_SLIDER_BACK_V.bmp" />
+    <Image Include="res\IDB_SLIDER_BAR.bmp" />
+    <Image Include="res\MFCApp.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="MFCApp.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

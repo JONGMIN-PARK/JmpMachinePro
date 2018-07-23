@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Theme">
+      <UniqueIdentifier>{e288ec0e-2f13-470f-948e-2a791d75962a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MFCApp">
+      <UniqueIdentifier>{70d452ef-32fb-425a-b838-69eb3478d576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MFCApp\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="MFCApp\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MFCApp.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCAppDlg.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\BaseCombo.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\BaseEdit.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\BaseMenu.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\DlgResizeWnd.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\HeadCtrl.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeButton.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeCheck.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeCombo.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeDialog.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeEdit.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeGrid.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeGroup.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeListBox.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeListCtrl.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeMenu.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemePicture.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeProgress.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeRadio.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeScroll.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeSlider.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeStatic.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme\ThemeToolTip.h">
+      <Filter>Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogAuto.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Runtime.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogMaint.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogManual.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogRecipe.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogConfig.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogLog.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MFCApp.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCAppDlg.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\BaseCombo.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\BaseEdit.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\BaseMenu.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\DlgResizeWnd.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\HeadCtrl.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeButton.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeCheck.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeCombo.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeDialog.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeEdit.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeGrid.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeGroup.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeListBox.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeListCtrl.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeMenu.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemePicture.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeProgress.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeRadio.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeScroll.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeSlider.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeStatic.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme\ThemeToolTip.cpp">
+      <Filter>Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogAuto.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Runtime.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogMaint.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogManual.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogRecipe.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogConfig.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogLog.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MFCApp.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MFCApp.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\MFCApp.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_COMBOBOX_DROP.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_COMBOBOX_DROP_ROUND.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_DLG_IN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_DLG_OUT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_EXIT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_MENU.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_BTN_TAB.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_CHECK_MARK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_GROUP_BACK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_GROUP_SEPERATE_H.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_GROUP_SEPERATE_V.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_MENU_ITEM_BACK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_MENU_SEPERATE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_RADIO_MARK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_BACK_H.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_BACK_V.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_BAR_H.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_BAR_V.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_DOWN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_LEFT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_RIGHT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SCROLL_UP.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SLIDER_BACK_H.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SLIDER_BACK_V.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\IDB_SLIDER_BAR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
