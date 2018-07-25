@@ -2,6 +2,8 @@
 #include "CTurboPmacManager.h"
 #include "Runtime.h"
 
+#include "tinyxml2.h"
+
 namespace jmp
 {
 	unsigned int CTurboPmacManager::kDprOffset = 0x1140; // 0x450 * 4
@@ -112,6 +114,11 @@ namespace jmp
 
 	int CTurboPmacManager::loadParameter()
 	{
+		static const char* xml = "<element/>";
+		tinyxml2::XMLDocument doc;
+		doc.Parse(xml);
+
+		int ret = doc.ErrorID();
 		return 0;
 	}
 	
