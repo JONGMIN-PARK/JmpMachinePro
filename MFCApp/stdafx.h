@@ -138,10 +138,10 @@ void gf_SetSkinBtnToolbar(CThemeButton *pButton, CString strFileName);
 #include "CScanLabRtc6.h"
 #include "IMotionManager.h"
 #include "CTurboPmacManager.h"
-#include <afxcontrolbars.h>
-#include <afxcontrolbars.h>
-#include <afxcontrolbars.h>
-#include <afxcontrolbars.h>
+
+
+#include "UIDataManager.h"
+
 #include <afxcontrolbars.h>
 
 const int MAIN_DISPLAY_WIDTH = 1920;

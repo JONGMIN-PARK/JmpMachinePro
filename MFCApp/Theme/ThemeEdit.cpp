@@ -254,8 +254,7 @@ void CThemeEdit::OnDestroy()
 	DeleteToolTip();
 	
 	// 에디트박스 배경 컬러 브러쉬 삭제
-	DeleteObject(m_brushBk);
-	
+	DeleteObject(m_brushBk);	
 }
 
 // 폰트 크기 설정
@@ -640,14 +639,15 @@ void CThemeEdit::SetOutlineColor(COLORREF crOutline)
 
 void CThemeEdit::Save()
 {
-	int id = GetDlgCtrlID();	
-	CString temp;
-	temp.Format(TEXT("%d"), id);
+	CString text;		
+	CString temp(mIdString.c_str());
 	CString str;
 	GetWindowText(str);
-	WritePrivateProfileString(TEXT("a"), temp, str, TEXT("D:\\aaaaaa.txt"));
-
 	mNumericValue = _wtof(str);
+
+	str.Format(TEXT("%.3f"), mNumericValue);
+
+	WritePrivateProfileString(TEXT("a"), temp, str, TEXT("D:\\ac.txt"));
 }
 
 void CThemeEdit::Load()
@@ -655,10 +655,8 @@ void CThemeEdit::Load()
 	CString strValue;
 	TCHAR szBuffer[MAX_PATH] = { 0, };
 	int id = GetDlgCtrlID();
-	CString temp;
-	temp.Format(TEXT("%d"), id);
-
-	GetPrivateProfileString(TEXT("a"), temp, TEXT(""), szBuffer, MAX_PATH, TEXT("D:\\aaaaaa.txt"));
+	CString temp(mIdString.c_str());
+	GetPrivateProfileString(TEXT("a"), temp, TEXT(""), szBuffer, MAX_PATH, TEXT("D:\\ac.txt"));
 	strValue.Format(TEXT("%s"), szBuffer);
 	SetWindowText(strValue);
 	
@@ -678,4 +676,9 @@ int CThemeEdit::GetInt()
 CString CThemeEdit::GetString()
 {
 	return TEXT("히히");
+}
+
+void CThemeEdit::setId2String(const std::string& str)
+{
+	mIdString = str;
 }

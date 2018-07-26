@@ -48,7 +48,9 @@ BOOL CDialogAuto::OnInitDialog()
 {
 	CThemeDialog::OnInitDialog();
 
-	SaveControlInitPosition();		
+	SaveControlInitPosition();
+
+	mUIDataManager = std::make_unique<jmp::CUIDataManager>();	
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
@@ -179,7 +181,17 @@ void CDialogAuto::OnShowWindow(BOOL bShow, UINT nStatus)
 		InitControlSkin();
 
 		CreateControl();
-		InitGridPerson();	
+		InitGridPerson();
+
+		mUIDataManager->add(GetDlgItem(IDC_EDIT1), "IDC_EDIT1", IDC_EDIT1);
+		mUIDataManager->load("");
+
+		double value = 0.0;
+		CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
+		value = pEdit->GetDouble();
+
+		//AfxBeginThread(executeLoop, this);
+		loopThread_ = std::thread(&executeLoop, this); //std::unique_ptr<std::thread>(new std::thread(&IMotionManager::executeLoop));
 	}	
 }
 
@@ -324,6 +336,11 @@ void CDialogAuto::OnDestroy()
 
 void CDialogAuto::OnBnClickedButton1()
 {
+	double value = 0.0;
+	CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
+	value = pEdit->GetDouble();
+
+	return;
 	theApp.mTurboPmacMotionManager->startRotaryBuffer();
 
 	/*int nSelItem = 0;
@@ -395,4 +412,20 @@ void CDialogAuto::OnNMDblclkGridPerson(NMHDR *pNMHDR, LRESULT *pResult)
 void CDialogAuto::OnBnClickedButton2()
 {
 	theApp.mTurboPmacMotionManager->stopRotaryBuffer();
+}
+
+unsigned int CDialogAuto::executeLoop(void* obj)
+{
+	CDialogAuto* dlgAuto = (CDialogAuto*)(obj);
+	CThemeEdit* pEdit = nullptr;
+	
+	jmp::CUIDataManager& dataManager = *dlgAuto->mUIDataManager;
+	//CUIDataManager* dataManager = &(*dlgAuto->mUIDataManager);
+	
+	double value = 0.0;
+	while (1)
+	{		
+		value = dataManager["IDC_EDIT1"]; //(*dlgAuto->mUIDataManager)["IDC_EDIT1"];
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	}
 }

@@ -126,6 +126,9 @@
     <ClInclude Include="DialogLog.h">
       <Filter>MFCApp\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UIDataManager.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApp.cpp">
@@ -222,6 +225,9 @@
       <Filter>MFCApp\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DialogLog.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIDataManager.cpp">
       <Filter>MFCApp\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,6 +20,7 @@
 
 #include "ThemeToolTip.h"
 #include "BaseEdit.h"
+#include "tinyxml2.h"
 #include <mutex>
 
 //#define dfCOLOR_TRANSPARENT						RGB(255,0,255)			// 투명을 의미하는 색깔
@@ -133,10 +134,12 @@ public:
 	double GetDouble();
 	int GetInt();
 	CString GetString();
+	void setId2String(const std::string& str);
 
 private:
 	std::mutex mMtxLock;
 	double mNumericValue = 10;
+	std::string mIdString = "";
 };
 
 /////////////////////////////////////////////////////////////////////////////

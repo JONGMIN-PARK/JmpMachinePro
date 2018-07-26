@@ -40,7 +40,12 @@ private:
 	void InitDialogSkin();
 	void InitControlSkin();
 	void CreateControl();
-	void InitGridPerson();
+	void InitGridPerson();	
+	
+	std::unique_ptr<jmp::CUIDataManager> mUIDataManager;
+
+	static unsigned int executeLoop(void* obj);
+	std::thread loopThread_;	
 //式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式
 
 public:
