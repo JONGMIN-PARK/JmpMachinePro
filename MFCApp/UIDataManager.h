@@ -3,14 +3,12 @@
 
 namespace jmp
 {
-//	using ID_MAP_LIST = std::map<std::string, unsigned int>;
-
-	typedef struct _ST_ID_MAP_LIST
+	typedef struct tagST_ID_MAP_LIST
 	{
-		CWnd* item;
-		std::string name;
-		unsigned int id;
-		double value;
+		CWnd* item; // Control
+		std::string name; // id (이름)
+		unsigned int id; // id (숫자)
+		double value; // 값
 	} *P_ST_ID_MAP_LIST, ST_ID_MAP_LIST;
 
 	class CUIDataManager
@@ -18,15 +16,19 @@ namespace jmp
 	public:
 		CUIDataManager();
 		virtual ~CUIDataManager();
+		CUIDataManager(const CUIDataManager& rhs) = delete;
+		CUIDataManager& operator=(const CUIDataManager& rhs) = delete;
+		CUIDataManager(CUIDataManager&& rhs) = delete;
+		CUIDataManager& operator=(CUIDataManager&& rhs) = delete;
 
 		double& operator[] (const std::string& idName);
 
-		int getIdByName(const std::string& name);	// Get name of the control.
-		void add(CWnd* control, const std::string& idName, unsigned int id);
-		void save(const std::string& fileName);
-		void load(const std::string& fileName);
-		void clear(const std::string& fileName);
-		void copy(const std::string& sourceFileName, const std::string& destinationFileName);
+		int getIdByName(const std::string& name);												// Get the name of the ui control.
+		void add(CWnd* control, const std::string& idName, unsigned int id);					// add the ui control to the lists.
+		void save(const std::string& fileName);													// save the data.
+		void load(const std::string& fileName);													// load the data.
+		void clear(const std::string& fileName);												// clear the data.
+		void copy(const std::string& sourceFileName, const std::string& destinationFileName);	// copy from the source file to the destination file.
 		double getValue(const std::string& idName) const;
 
 	protected:

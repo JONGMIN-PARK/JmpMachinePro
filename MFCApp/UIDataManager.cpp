@@ -17,16 +17,8 @@ namespace jmp
 	double& CUIDataManager::operator[] (const std::string& idName)
 	{
 		double value = 0.0;
-
-		for (const auto& item : mItems)
-		{
-			if (item.name == idName)
-			{
-				value = item.value;
-				break;
-			}
-		}		
-
+		value = getValue(idName);
+		
 		return value;
 	}
 
@@ -61,7 +53,7 @@ namespace jmp
 				CThemeEdit* edit = dynamic_cast<CThemeEdit*>(mItems[n].item);
 
 				edit->setId2String(mItems[n].name);
-				edit->Save();
+				edit->save();
 			}
 			else if (mItems[n].item->IsKindOf(RUNTIME_CLASS(CThemeEdit)) != 0)
 			{
@@ -79,8 +71,8 @@ namespace jmp
 				CThemeEdit* edit = dynamic_cast<CThemeEdit*>(mItems[n].item);
 
 				edit->setId2String(mItems[n].name);
-				edit->Load();
-				mItems[n].value = edit->GetDouble();
+				edit->load();
+				mItems[n].value = edit->getDouble();
 			}
 			else if (mItems[n].item->IsKindOf(RUNTIME_CLASS(CThemeEdit)) != 0)
 			{

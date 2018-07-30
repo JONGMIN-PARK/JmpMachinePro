@@ -63,7 +63,7 @@ BEGIN_MESSAGE_MAP(CThemeEdit, CWnd)
 	ON_WM_DESTROY()
 	ON_WM_CREATE()
 	ON_WM_SIZE()
-	ON_WM_CTLCOLOR()
+	ON_WM_CTLCOLOR()	
 	ON_EN_CHANGE(dfIDC_EDITBOX_CTRL, OnChangeEditbox)
 	ON_EN_ERRSPACE(dfIDC_EDITBOX_CTRL, OnErrspaceEditbox)
 	ON_EN_HSCROLL(dfIDC_EDITBOX_CTRL, OnHscrollEditbox)
@@ -73,6 +73,8 @@ BEGIN_MESSAGE_MAP(CThemeEdit, CWnd)
 	ON_EN_UPDATE(dfIDC_EDITBOX_CTRL, OnUpdateEditbox)
 	ON_EN_VSCROLL(dfIDC_EDITBOX_CTRL, OnVscrollEditbox)
 	//}}AFX_MSG_MAP
+//	ON_WM_CHAR()
+//	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
 
@@ -115,6 +117,22 @@ BOOL CThemeEdit::PreTranslateMessage(MSG* pMsg)
 	//	}
 	//}
 
+	if (pMsg->message == WM_CHAR)
+	{
+		switch (pMsg->wParam)
+		{
+		case VK_BACK:
+		case VK_RETURN:
+		case 0x0A:
+		case VK_ESCAPE:
+		case VK_TAB:
+			break;
+		default:
+			mLastSel = m_pEditbox->GetSel();
+			GetWindowText(mLastValidValue);
+			break;
+		}
+	}
 
 	return CWnd::PreTranslateMessage(pMsg);
 }
@@ -228,13 +246,6 @@ void CThemeEdit::SetSel(int nStart, int nEnd)
 void CThemeEdit::SetFocus(BOOL f)
 {
 	if( f ) m_pEditbox->SetFocus();
-}
-
-void CThemeEdit::SetMinMaxValue(double minValue, double maxValue, BOOL valueIsInteger)
-{
-	m_stThemeInfo.nMinValue = minValue;
-	m_stThemeInfo.nMaxValue = maxValue;
-	m_stThemeInfo.bIntValue = valueIsInteger;
 }
 
 // 클래스 종료시에 실행되는 함수
@@ -461,6 +472,14 @@ LRESULT CThemeEdit::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 		}*/
 	}
 		break;
+
+	case WM_CHAR:
+	{
+		CString msg;
+		msg.Format(TEXT("%d"), 1);
+	}
+		break;
+
 	default:
 		break;
 	}
@@ -596,7 +615,56 @@ void CThemeEdit::OnSetfocusEditbox()
 
 // 에디트박스에서 'EN_UPDATE' 메시지 발생시 실행되는 함수
 void CThemeEdit::OnUpdateEditbox()
-{
+{	
+	// 타입에 따라 입력 문자를 제한한다.
+	if (mInputDataType != eInputDataType::String)
+	{
+		if (!mRejectingChange)
+		{
+			CString aValue;
+			GetWindowText(aValue);
+			LPTSTR aEndPtr = nullptr;
+			union
+			{
+				long aLongValue;
+				double aDoubleValue;
+			};
+
+			errno = 0;
+			//bool withinLimits = false;
+			switch (mInputDataType)
+			{
+			case eInputDataType::Double :
+				aDoubleValue = _tcstod(aValue, &aEndPtr);
+				/*if ((mIsUsingLimits && aDoubleValue >= mMinValue && aDoubleValue <= mMaxValue) || (!mIsUsingLimits))
+				{
+					withinLimits = true;
+				}*/
+				break;
+
+			case eInputDataType::Long :
+				aLongValue = _tcstol(aValue, &aEndPtr, 10);
+				/*if ((mIsUsingLimits && aLongValue >= mMinValue && aLongValue <= mMaxValue) || (!mIsUsingLimits))
+				{
+					withinLimits = true;
+				}*/
+				break;
+			}
+
+			if (!(*aEndPtr) && (errno != ERANGE))
+			{
+				mLastValidValue = aValue;
+			}
+			else
+			{
+				mRejectingChange = true;
+				SetWindowText(mLastValidValue);
+				mRejectingChange = false;
+				SetSel(mLastSel, mLastSel);
+			}
+		}
+	}
+
 	// 부모 윈도우로 메세지 전달
 	CWnd * pParent;
 	pParent = this->GetParent();
@@ -637,7 +705,27 @@ void CThemeEdit::SetOutlineColor(COLORREF crOutline)
 	m_stThemeInfo.crOutlineRB = crOutline;
 }
 
-void CThemeEdit::Save()
+void CThemeEdit::setInputDataType(eInputDataType inputDataType)
+{
+	mInputDataType = inputDataType;
+}
+
+void CThemeEdit::setMinValue(double min)
+{
+	mMinValue = min;
+}
+
+void CThemeEdit::setMaxValue(double max)
+{
+	mMaxValue = max;
+}
+
+void CThemeEdit::useLimits(bool use)
+{
+	mIsUsingLimits = use;
+}
+
+void CThemeEdit::save()
 {
 	CString text;		
 	CString temp(mIdString.c_str());
@@ -650,7 +738,7 @@ void CThemeEdit::Save()
 	WritePrivateProfileString(TEXT("a"), temp, str, TEXT("D:\\ac.txt"));
 }
 
-void CThemeEdit::Load()
+void CThemeEdit::load()
 {
 	CString strValue;
 	TCHAR szBuffer[MAX_PATH] = { 0, };
@@ -663,17 +751,17 @@ void CThemeEdit::Load()
 	mNumericValue = _wtof(strValue);
 }
 
-double CThemeEdit::GetDouble()
+double CThemeEdit::getDouble() const
 {	
 	return mNumericValue;
 }
 
-int CThemeEdit::GetInt()
+int CThemeEdit::getInt() const
 {
 	return 2;
 }
 
-CString CThemeEdit::GetString()
+CString CThemeEdit::getString()
 {
 	return TEXT("히히");
 }

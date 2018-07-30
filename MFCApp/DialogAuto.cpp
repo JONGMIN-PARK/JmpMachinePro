@@ -29,7 +29,7 @@ void CDialogAuto::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CDialogAuto, CThemeDialog)
-	ON_EN_CHANGE(IDC_EDIT1, &CDialogAuto::OnEnChangeEdit1)
+//	ON_EN_CHANGE(IDC_EDIT1, &CDialogAuto::OnEnChangeEdit1)
 	ON_WM_SHOWWINDOW()
 	ON_WM_SIZE()
 	ON_WM_CLOSE()
@@ -134,15 +134,15 @@ void CDialogAuto::InitControlSkin()
 }
 
 
-void CDialogAuto::OnEnChangeEdit1()
-{
-	// TODO:  If this is a RICHEDIT control, the control will not
-	// send this notification unless you override the CThemeDialog::OnInitDialog()
-	// function and call CRichEditCtrl().SetEventMask()
-	// with the ENM_CHANGE flag ORed into the mask.
-
-	// TODO:  Add your control notification handler code here
-}
+//void CDialogAuto::OnEnChangeEdit1()
+//{
+//	// TODO:  If this is a RICHEDIT control, the control will not
+//	// send this notification unless you override the CThemeDialog::OnInitDialog()
+//	// function and call CRichEditCtrl().SetEventMask()
+//	// with the ENM_CHANGE flag ORed into the mask.
+//
+//	// TODO:  Add your control notification handler code here
+//}
 
 BOOL CDialogAuto::PreTranslateMessage(MSG* pMsg)
 {
@@ -183,15 +183,15 @@ void CDialogAuto::OnShowWindow(BOOL bShow, UINT nStatus)
 		CreateControl();
 		InitGridPerson();
 
-		mUIDataManager->add(GetDlgItem(IDC_EDIT1), "IDC_EDIT1", IDC_EDIT1);
-		mUIDataManager->load("");
-
-		double value = 0.0;
 		CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
-		value = pEdit->GetDouble();
+		pEdit->setMinValue(18);
+		pEdit->setMaxValue(1000);
+		pEdit->useLimits(true);
 
-		//AfxBeginThread(executeLoop, this);
-		loopThread_ = std::thread(&executeLoop, this); //std::unique_ptr<std::thread>(new std::thread(&IMotionManager::executeLoop));
+		mUIDataManager->add(GetDlgItem(IDC_EDIT1), "IDC_EDIT1", IDC_EDIT1);		
+		mUIDataManager->load("");			
+		
+		//loopThread_ = std::thread(&executeLoop, this); //std::unique_ptr<std::thread>(new std::thread(&IMotionManager::executeLoop));
 	}	
 }
 
@@ -338,7 +338,7 @@ void CDialogAuto::OnBnClickedButton1()
 {
 	double value = 0.0;
 	CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
-	value = pEdit->GetDouble();
+	value = pEdit->getDouble();
 
 	return;
 	theApp.mTurboPmacMotionManager->startRotaryBuffer();
@@ -399,15 +399,6 @@ void CDialogAuto::OnNMDblclkGridPerson(NMHDR *pNMHDR, LRESULT *pResult)
 
 	*pResult = 0;
 }
-
-
-//void CDialogAuto::OnLvnItemchangedGridPerson(NMHDR *pNMHDR, LRESULT *pResult)
-//{
-//	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-//	// TODO: Add your control notification handler code here
-//	*pResult = 0;
-//}
-
 
 void CDialogAuto::OnBnClickedButton2()
 {
