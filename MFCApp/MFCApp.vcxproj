@@ -203,10 +203,14 @@
   <ItemGroup>
     <ClInclude Include="DialogAuto.h" />
     <ClInclude Include="DialogConfig.h" />
+    <ClInclude Include="DialogDio.h" />
     <ClInclude Include="DialogLog.h" />
     <ClInclude Include="DialogMaint.h" />
     <ClInclude Include="DialogManual.h" />
+    <ClInclude Include="DialogMotion.h" />
     <ClInclude Include="DialogRecipe.h" />
+    <ClInclude Include="DialogScanner.h" />
+    <ClInclude Include="DialogVision.h" />
     <ClInclude Include="Include\Runtime.h" />
     <ClInclude Include="MFCApp.h" />
     <ClInclude Include="MFCAppDlg.h" />
@@ -240,10 +244,14 @@
   <ItemGroup>
     <ClCompile Include="DialogAuto.cpp" />
     <ClCompile Include="DialogConfig.cpp" />
+    <ClCompile Include="DialogDio.cpp" />
     <ClCompile Include="DialogLog.cpp" />
     <ClCompile Include="DialogMaint.cpp" />
     <ClCompile Include="DialogManual.cpp" />
+    <ClCompile Include="DialogMotion.cpp" />
     <ClCompile Include="DialogRecipe.cpp" />
+    <ClCompile Include="DialogScanner.cpp" />
+    <ClCompile Include="DialogVision.cpp" />
     <ClCompile Include="Include\Runtime.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

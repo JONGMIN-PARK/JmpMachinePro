@@ -66,7 +66,7 @@ void CDialogAuto::InitDialogSkin()
 	SetAlignFormat(DT_CENTER | DT_VCENTER);
 	//SetCaptionArea(CRect(1, 1, -1, 57));
 	//SetCaptionText(TEXT("Theme Control Example"));
-	SetBackColor(RGB(62, 62, 62));
+	SetBackColor(kSubDialogBackColor);
 }
 
 void CDialogAuto::InitControlSkin()
@@ -76,7 +76,7 @@ void CDialogAuto::InitControlSkin()
 	CThemeGroup* pGroup = nullptr;
 	CThemeStatic* pStatic = nullptr;
 
-	// 배경 부터 추가...
+	// 배경 부터 추가...!!! <중요>
 	pGroup = (CThemeGroup*)AddThemeGroupCtrl(IDC_STATIC_WORK_STATE);
 	gf_SetSkinGroup(pGroup);
 	pGroup->SetFontColor(RGB(255, 255, 255));
@@ -84,8 +84,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(40,185,252));
-	pGroup->SetOutlineRBColor(RGB(40,185,245));
+	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
+	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();
@@ -97,8 +97,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(40, 185, 252));
-	pGroup->SetOutlineRBColor(RGB(40, 185, 245));
+	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
+	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();
@@ -110,8 +110,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(40, 185, 252));
-	pGroup->SetOutlineRBColor(RGB(40, 185, 245));
+	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
+	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();

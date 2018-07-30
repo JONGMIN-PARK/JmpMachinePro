@@ -143,6 +143,11 @@ void gf_SetSkinBtnToolbar(CThemeButton *pButton, CString strFileName);
 #include "UIDataManager.h"
 
 #include <afxcontrolbars.h>
+#include <afxcontrolbars.h>
+#include <afxcontrolbars.h>
+#include <afxcontrolbars.h>
+#include <afxcontrolbars.h>
 
 const int MAIN_DISPLAY_WIDTH = 1920;
 const int MAIN_DISPLAY_HEIGHT = 1080;
+const COLORREF kSubDialogBackColor = RGB(62, 62, 62);

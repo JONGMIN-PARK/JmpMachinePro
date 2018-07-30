@@ -129,6 +129,18 @@
     <ClInclude Include="UIDataManager.h">
       <Filter>MFCApp\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DialogMotion.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogDio.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogVision.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogScanner.h">
+      <Filter>MFCApp\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApp.cpp">
@@ -228,6 +240,18 @@
       <Filter>MFCApp\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UIDataManager.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogMotion.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogDio.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogVision.cpp">
+      <Filter>MFCApp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogScanner.cpp">
       <Filter>MFCApp\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
