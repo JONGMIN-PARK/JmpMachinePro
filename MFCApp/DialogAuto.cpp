@@ -29,7 +29,7 @@ void CDialogAuto::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CDialogAuto, CThemeDialog)
-//	ON_EN_CHANGE(IDC_EDIT1, &CDialogAuto::OnEnChangeEdit1)
+	ON_EN_CHANGE(IDC_EDIT1, &CDialogAuto::OnEnChangeEdit1)
 	ON_WM_SHOWWINDOW()
 	ON_WM_SIZE()
 	ON_WM_CLOSE()
@@ -48,9 +48,7 @@ BOOL CDialogAuto::OnInitDialog()
 {
 	CThemeDialog::OnInitDialog();
 
-	SaveControlInitPosition();
-
-	mUIDataManager = std::make_unique<jmp::CUIDataManager>();	
+	SaveControlInitPosition();		
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
@@ -66,7 +64,7 @@ void CDialogAuto::InitDialogSkin()
 	SetAlignFormat(DT_CENTER | DT_VCENTER);
 	//SetCaptionArea(CRect(1, 1, -1, 57));
 	//SetCaptionText(TEXT("Theme Control Example"));
-	SetBackColor(kSubDialogBackColor);
+	SetBackColor(RGB(62, 62, 62));
 }
 
 void CDialogAuto::InitControlSkin()
@@ -76,7 +74,7 @@ void CDialogAuto::InitControlSkin()
 	CThemeGroup* pGroup = nullptr;
 	CThemeStatic* pStatic = nullptr;
 
-	// 배경 부터 추가...!!! <중요>
+	// 배경 부터 추가...
 	pGroup = (CThemeGroup*)AddThemeGroupCtrl(IDC_STATIC_WORK_STATE);
 	gf_SetSkinGroup(pGroup);
 	pGroup->SetFontColor(RGB(255, 255, 255));
@@ -84,8 +82,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
-	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
+	pGroup->SetOutlineLTColor(RGB(40,185,252));
+	pGroup->SetOutlineRBColor(RGB(40,185,245));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();
@@ -97,8 +95,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
-	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
+	pGroup->SetOutlineLTColor(RGB(40, 185, 252));
+	pGroup->SetOutlineRBColor(RGB(40, 185, 245));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();
@@ -110,8 +108,8 @@ void CDialogAuto::InitControlSkin()
 	pGroup->SetFontSize(14);
 	pGroup->SetEdgeRoundValue(15);
 	pGroup->SetBackDrawType(dfBACK_DRAW_TYPE_COLOR);
-	pGroup->SetOutlineLTColor(RGB(255, 255, 255));
-	pGroup->SetOutlineRBColor(RGB(255, 255, 255));
+	pGroup->SetOutlineLTColor(RGB(40, 185, 252));
+	pGroup->SetOutlineRBColor(RGB(40, 185, 245));
 	//pGroup->SetOutlineColor(RGB(0, 0, 0));
 	pGroup->SetBackColor(RGB(68, 68, 68));
 	pGroup->Invalidate();
@@ -134,15 +132,15 @@ void CDialogAuto::InitControlSkin()
 }
 
 
-//void CDialogAuto::OnEnChangeEdit1()
-//{
-//	// TODO:  If this is a RICHEDIT control, the control will not
-//	// send this notification unless you override the CThemeDialog::OnInitDialog()
-//	// function and call CRichEditCtrl().SetEventMask()
-//	// with the ENM_CHANGE flag ORed into the mask.
-//
-//	// TODO:  Add your control notification handler code here
-//}
+void CDialogAuto::OnEnChangeEdit1()
+{
+	// TODO:  If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CThemeDialog::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+
+	// TODO:  Add your control notification handler code here
+}
 
 BOOL CDialogAuto::PreTranslateMessage(MSG* pMsg)
 {
@@ -181,17 +179,7 @@ void CDialogAuto::OnShowWindow(BOOL bShow, UINT nStatus)
 		InitControlSkin();
 
 		CreateControl();
-		InitGridPerson();
-
-		CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
-		pEdit->setMinValue(18);
-		pEdit->setMaxValue(1000);
-		pEdit->useLimits(true);
-
-		mUIDataManager->add(GetDlgItem(IDC_EDIT1), "IDC_EDIT1", IDC_EDIT1);		
-		mUIDataManager->load("");			
-		
-		//loopThread_ = std::thread(&executeLoop, this); //std::unique_ptr<std::thread>(new std::thread(&IMotionManager::executeLoop));
+		InitGridPerson();	
 	}	
 }
 
@@ -336,11 +324,6 @@ void CDialogAuto::OnDestroy()
 
 void CDialogAuto::OnBnClickedButton1()
 {
-	double value = 0.0;
-	CThemeEdit* pEdit = static_cast<CThemeEdit*>(GetDlgItem(IDC_EDIT1));
-	value = pEdit->getDouble();
-
-	return;
 	theApp.mTurboPmacMotionManager->startRotaryBuffer();
 
 	/*int nSelItem = 0;
@@ -400,23 +383,16 @@ void CDialogAuto::OnNMDblclkGridPerson(NMHDR *pNMHDR, LRESULT *pResult)
 	*pResult = 0;
 }
 
+
+//void CDialogAuto::OnLvnItemchangedGridPerson(NMHDR *pNMHDR, LRESULT *pResult)
+//{
+//	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+//	// TODO: Add your control notification handler code here
+//	*pResult = 0;
+//}
+
+
 void CDialogAuto::OnBnClickedButton2()
 {
 	theApp.mTurboPmacMotionManager->stopRotaryBuffer();
-}
-
-unsigned int CDialogAuto::executeLoop(void* obj)
-{
-	CDialogAuto* dlgAuto = (CDialogAuto*)(obj);
-	CThemeEdit* pEdit = nullptr;
-	
-	jmp::CUIDataManager& dataManager = *dlgAuto->mUIDataManager;
-	//CUIDataManager* dataManager = &(*dlgAuto->mUIDataManager);
-	
-	double value = 0.0;
-	while (1)
-	{		
-		value = dataManager["IDC_EDIT1"]; //(*dlgAuto->mUIDataManager)["IDC_EDIT1"];
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
 }

@@ -2,8 +2,6 @@
 #include "CTurboPmacManager.h"
 #include "Runtime.h"
 
-#include "tinyxml2.h"
-
 namespace jmp
 {
 	unsigned int CTurboPmacManager::kDprOffset = 0x1140; // 0x450 * 4
@@ -50,11 +48,18 @@ namespace jmp
 
 		mDeviceNumbers = keys;
 
+		bool open = true;
 		for (size_t n = 0; n < mDeviceNumbers.size(); n++)
 		{
-			DeviceOpen(mDeviceNumbers[n]);
-		}		
+			if (DeviceOpen(mDeviceNumbers[n]) == false)
+			{
+				open = false;
+				break;
+			}
+		}
 		
+		mIsInitialized = open;
+
 		// DPRAM을 사용해서 위치 및 각종 데이터를 읽어오도록 설정한다.
 		// (여기서는 DPRAM Realtime Update 기능을 사용하도록 설정한다.
 		// DPR Realtime Fixed Data Buffer Enable
@@ -101,7 +106,11 @@ namespace jmp
 		// Dpr
 		terminated_ = true;
 		mRotaryBufferLoopThread.join();
-		abortRotaryBuffer();
+
+		if (mIsInitialized)
+		{
+			abortRotaryBuffer();
+		}
 
 		// Device Close
 		for (const auto& item : mDeviceNumbers)
@@ -114,11 +123,6 @@ namespace jmp
 
 	int CTurboPmacManager::loadParameter()
 	{
-		static const char* xml = "<element/>";
-		tinyxml2::XMLDocument doc;
-		doc.Parse(xml);
-
-		int ret = doc.ErrorID();
 		return 0;
 	}
 	

@@ -32,7 +32,7 @@ public:
 public:
 	jmp::IScanLabRtc* mScanLabRtc;
 	//std::unique_ptr<jmp::CScanLabRtc5> mScanLabRtc;
-	std::unique_ptr<jmp::CTurboPmacManager> mTurboPmacMotionManager;	
+	std::unique_ptr<jmp::CTurboPmacManager> mTurboPmacMotionManager;
 };
 
 extern CMFCAppApp theApp;

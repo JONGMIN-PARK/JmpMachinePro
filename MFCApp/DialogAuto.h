@@ -40,16 +40,11 @@ private:
 	void InitDialogSkin();
 	void InitControlSkin();
 	void CreateControl();
-	void InitGridPerson();	
-	
-	std::unique_ptr<jmp::CUIDataManager> mUIDataManager;
-
-	static unsigned int executeLoop(void* obj);
-	std::thread loopThread_;	
+	void InitGridPerson();
 //式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式
 
 public:
-//	afx_msg void OnEnChangeEdit1();
+	afx_msg void OnEnChangeEdit1();
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
@@ -59,5 +54,6 @@ public:
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnNMDblclkGridPerson(NMHDR *pNMHDR, LRESULT *pResult);
 	CListCtrl m_pListCtrlPerson;
+//	afx_msg void OnLvnItemchangedGridPerson(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedButton2();
 };

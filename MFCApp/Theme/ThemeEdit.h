@@ -20,7 +20,6 @@
 
 #include "ThemeToolTip.h"
 #include "BaseEdit.h"
-#include "tinyxml2.h"
 #include <mutex>
 
 //#define dfCOLOR_TRANSPARENT						RGB(255,0,255)			// 투명을 의미하는 색깔
@@ -96,7 +95,8 @@ public:
 	void SetBackColorToEditbox(COLORREF crBack);
 	void SetFontColor(COLORREF crFont);
 	void SetFontBold(BOOL bFontBold);
-	void SetFontSize(int nFontSize);	
+	void SetFontSize(int nFontSize);
+	void SetMinMaxValue( double minValue, double maxValue , BOOL valueIsInteger );
 	void SetFocus(BOOL f);
 	void SetSel(int nStart, int nEnd);
 	void ModifyEditStyle(DWORD remove, DWORD add);
@@ -128,36 +128,15 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
-	enum class eInputDataType
-	{
-		Double,
-		Long,
-		String,
-	};
-
-	void setInputDataType(eInputDataType inputDataType);
-	void setMinValue(double min);
-	void setMaxValue(double max);
-	void useLimits(bool use);
-	void save();
-	void load();
-	double getDouble() const;
-	int getInt() const;
-	CString getString();
-	void setId2String(const std::string& str);
+	void Save();
+	void Load();
+	double GetDouble();
+	int GetInt();
+	CString GetString();
 
 private:
 	std::mutex mMtxLock;
 	double mNumericValue = 10;
-	std::string mIdString = "";
-
-	eInputDataType mInputDataType = eInputDataType::Double;
-	CString mLastValidValue = TEXT("");
-	UINT mLastSel = 0;
-	bool mRejectingChange = false;
-	bool mIsUsingLimits = false;
-	double mMinValue = 0.0;
-	double mMaxValue = 0.0;
 };
 
 /////////////////////////////////////////////////////////////////////////////

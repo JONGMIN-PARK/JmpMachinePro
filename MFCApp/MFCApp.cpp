@@ -104,8 +104,9 @@ BOOL CMFCAppApp::InitInstance()
 	deviceNumbers[0] = { 0, 1, 2, 3 };
 	
 	mTurboPmacMotionManager->init(deviceNumbers);
-	mTurboPmacMotionManager->loadProgramFile("D:\\0001. Document\\001. 葛记包访\\000. Turbo PMAC\\Rotary Buffer\\BinaryRotaryBufferEx\\RotaryPG\\RotaryEx.pmc");
-	mTurboPmacMotionManager->initRotaryBuffer();
+
+	//mTurboPmacMotionManager->loadProgramFile("D:\\0001. Document\\001. 葛记包访\\000. Turbo PMAC\\Rotary Buffer\\BinaryRotaryBufferEx\\RotaryPG\\RotaryEx.pmc");
+	//mTurboPmacMotionManager->initRotaryBuffer();
 
 	CMFCAppDlg dlg;
 	m_pMainWnd = &dlg;

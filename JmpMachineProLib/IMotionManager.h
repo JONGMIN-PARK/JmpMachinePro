@@ -38,7 +38,8 @@ namespace jmp
 	protected:
 		std::vector<std::unique_ptr<IMotionItem>> items_;
 		std::thread loopThread_;
-		bool terminated_;
+		bool terminated_ = false;
+		bool mIsInitialized = false;
 
 	private:
 

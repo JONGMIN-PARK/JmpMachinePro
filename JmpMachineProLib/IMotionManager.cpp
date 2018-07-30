@@ -26,7 +26,11 @@ namespace jmp
 
 		while (!motionManager->terminated_)
 		{
-			motionManager->getStatus();
+			if (motionManager->mIsInitialized)
+			{
+				motionManager->getStatus();
+			}
+
 			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}		
 	}
